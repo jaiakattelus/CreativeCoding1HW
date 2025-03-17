@@ -1,49 +1,89 @@
-<html>
-    <title>Volleyball Maker page 3</title>
-    <head>
-         <!--embedded styles-->
-         <style>
-            body {
-                background-color: lightblue;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Maker Page 3</title>
+    
+    <!-- Embedded styles -->
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+        a {
+            color: white;
+            margin: 5px;
+            display: inline-block;
+        }
+        input {
+            padding: 5px;
+            border: 1px solid black;
+        }
+        .error {
+            border: 2px solid red;
+            background-color: #ffcccc;
+        }
+    </style>
+
+    <script>
+        function getData() {
+            var name = document.getElementById("txtName");
+            var phone = document.getElementById("txtPhone");
+
+            // Reset previous error styling
+            name.classList.remove("error");
+            phone.classList.remove("error");
+
+            // Check if fields are empty and apply red border
+            if (name.value.trim() === "") {
+                name.classList.add("error");
             }
-            h1 {
-                color: white;
-                text-align: center;
+            if (phone.value.trim() === "") {
+                phone.classList.add("error");
             }
-            a {
-                color: white;
-                text-align: center;
+
+            // If both fields are filled, display the values
+            if (name.value.trim() !== "" && phone.value.trim() !== "") {
+                document.getElementById("finalResult").innerHTML = 
+                    "Name: " + name.value + "<br>Phone: " + phone.value;
             }
-        </style>
-        <script>
-    function getData() {
-      var name = document.getElementById("txtName").value;
-      var phone = document.getElementById("txtPhone").value;
-      // get the new field value
-      // print out the new field's value     document.getElementById("finalResult").innerHTML = "name: " + name + " phone: " + phone;
-    }
-  </script>
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        crossorigin="anonymous">
-    </head>
-    <body> 
-        <table>
+        }
+    </script>
+
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          crossorigin="anonymous">
+</head>
+<body>
+    <h1>Volleyball Maker Page 3</h1>
+    
+    <table align="center">
         <tr>
-          <td>Name</td>
-          <td><input type="text" id="txtName"></td>
+            <td>Name:</td>
+            <td><input type="text" id="txtName"></td>
         </tr>
         <tr>
-          <td>Phone Number</td>
-          <td><input type="text" id="txtPhone"></td>
+            <td>Phone Number:</td>
+            <td><input type="text" id="txtPhone"></td>
         </tr>
         <tr>
-          <td colspan="2"><button id="btnSubmit" onClick="getData();">Submit</button></td>
+            <td colspan="2">
+                <button id="btnSubmit" onClick="getData();">Submit</button>
+            </td>
         </tr>
-      </table>
-      <div id="finalResult"></div>
-        <a href="index.html">page1</a>
-        <a href="page2.html">page2</a>
-        <a href="page4.html">page4</a>
-        <a href="page5.html">page5</a>
-    </body>
+    </table>
+
+    <div id="finalResult"></div>
+
+    <br>
+
+    <a href="index.html">Page 1</a>
+    <a href="page2.html">Page 2</a>
+    <a href="page4.html">Page 4</a>
+    <a href="page5.html">Page 5</a>
+</body>
 </html>
