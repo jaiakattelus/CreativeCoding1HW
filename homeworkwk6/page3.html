@@ -1,17 +1,49 @@
 <html>
     <title>Volleyball Maker page 3</title>
     <head>
+         <!--embedded styles-->
+         <style>
+            body {
+                background-color: lightblue;
+            }
+            h1 {
+                color: white;
+                text-align: center;
+            }
+            a {
+                color: white;
+                text-align: center;
+            }
+        </style>
+        <script>
+    function getData() {
+      var name = document.getElementById("txtName").value;
+      var phone = document.getElementById("txtPhone").value;
+      // get the new field value
+      // print out the new field's value     document.getElementById("finalResult").innerHTML = "name: " + name + " phone: " + phone;
+    }
+  </script>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         crossorigin="anonymous">
     </head>
-    <body> style="background-color: lightblue;">
-        Send us your email for more information!
-        <br>
-        <form>
-            <input type="email" name="email" placeholder="Enter your email">
-            <input type="submit" value="Submit">
-        </form>
+    <body> 
+        <table>
+        <tr>
+          <td>Name</td>
+          <td><input type="text" id="txtName"></td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td><input type="text" id="txtPhone"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button id="btnSubmit" onClick="getData();">Submit</button></td>
+        </tr>
+      </table>
+      <div id="finalResult"></div>
         <a href="index.html">page1</a>
         <a href="page2.html">page2</a>
+        <a href="page4.html">page4</a>
+        <a href="page5.html">page5</a>
     </body>
 </html>
